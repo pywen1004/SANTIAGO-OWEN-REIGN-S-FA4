@@ -1,13 +1,11 @@
 ---
-jupyter:
-  colab:
-  kernelspec:
-    display_name: R
-    name: ir
-  language_info:
-    name: R
-  nbformat: 4
-  nbformat_minor: 0
+title: "SANTIAGO,_OWEN_REIGN_S_FA4"
+author: "Santiago, Owen"
+date: "2025-03-03"
+output: pdf_document
+---
+[GitHub Repository](https://github.com/pywen1004/SEC-1---FA1-GROUP-9---ARAGO-K-SANTIAGO-O) 
+
 ---
 
 ::: {.cell .markdown id="IavDn_XZp0Nk"}
