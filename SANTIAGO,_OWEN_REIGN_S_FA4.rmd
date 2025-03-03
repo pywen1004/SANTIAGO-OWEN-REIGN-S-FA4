@@ -4,7 +4,7 @@ author: "Santiago, Owen"
 date: "2025-03-03"
 output: pdf_document
 ---
-[GitHub Repository](https://github.com/pywen1004/SEC-1---FA1-GROUP-9---ARAGO-K-SANTIAGO-O) 
+[GitHub Repository](https://github.com/pywen1004/SANTIAGO-OWEN-REIGN-S-FA4/blob/main/SANTIAGO%2C_OWEN_REIGN_S_FA4.rmd) 
 
 ---
 
