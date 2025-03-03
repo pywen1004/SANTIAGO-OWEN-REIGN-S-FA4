@@ -1,0 +1,78 @@
+---
+jupyter:
+  colab:
+  kernelspec:
+    display_name: R
+    name: ir
+  language_info:
+    name: R
+  nbformat: 4
+  nbformat_minor: 0
+---
+
+::: {.cell .markdown id="IavDn_XZp0Nk"}
+item 5
+:::
+
+::: {.cell .code execution_count="1" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":34}" id="-ZDDYWWpgpzH" outputId="98493d4c-6ffd-4684-e0df-898823179de8"}
+``` python
+system <- data.frame(
+  sensor = 1:4,
+  supplied = c(15, 20, 25, 40),
+  relevant = c(50, 60, 80, 85)
+)
+
+system$frac_supplied <- system$supplied / 100
+system$frac_relevant <- system$relevant / 100
+
+overall <- sum(system$frac_supplied * system$frac_relevant) * 100
+
+paste("The overall percentage of relevant image is", round(overall, 2), "%")
+```
+
+::: {.output .display_data}
+'The overall percentage of relevant image is 73.5 %'
+:::
+:::
+
+::: {.cell .markdown id="oOc3oIHXp4li"}
+item 6
+:::
+
+::: {.cell .code execution_count="3" colab="{\"base_uri\":\"https://localhost:8080/\",\"height\":114}" id="fTd-JuT9p4NT" outputId="3a10e786-9d95-47b3-d073-60fe8ff864c8"}
+``` python
+tossed_coin <- c("HH", "HT", "TH", "TT")
+prob <- rep(1/4, 4)
+
+same <- c("HH", "TT")
+first <- c("HH", "HT")
+second <- c("TH", "HH")
+
+prob_same <- sum(prob[tossed_coin %in% same])
+prob_first <- sum(prob[tossed_coin %in% first])
+prob_second <- sum(prob[tossed_coin %in% second])
+
+intersect_same_first <- sum(prob[tossed_coin %in% intersect(same, first)])
+intersect_same_second <- sum(prob[tossed_coin %in% intersect(same, second)])
+intersect_first_second <- sum(prob[tossed_coin %in% intersect(first, second)])
+intersect_all <- sum(prob[tossed_coin %in% intersect(intersect(same, first), second)])
+
+a <- abs(intersect_same_first - prob_same * prob_first) < 1e-6
+b <- abs(intersect_same_second - prob_same * prob_second) < 1e-6
+c <- abs(intersect_first_second - prob_first * prob_second) < 1e-6
+
+is_not_mutually_independent <- abs(intersect_all - prob_same * prob_first * prob_second) > 1e-6
+
+list(
+  pairwise_independent = a & b & c,
+  not_mutually_independent = is_not_mutually_independent
+)
+```
+
+::: {.output .display_data}
+$pairwise_independent
+:   TRUE
+$not_mutually_independent
+:   TRUE
+:::
+:::
